@@ -85,6 +85,7 @@ export class MyApp {
           });
         });
         console.log(this.list);
+        
         //this.localNotifications.schedule(notificationsList);
       }, error => {
         console.log(error);
