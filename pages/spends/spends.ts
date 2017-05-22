@@ -10,8 +10,6 @@ import { SpendsService } from './spends.service'
   templateUrl: 'spends.html'
 })
 export class SpendsPage {
-  @ViewChild(Navbar) navbar: Navbar;
-  //@ViewChild('doughnutCanvas') doughnutCanvas;
   yearMonth: any;
   Transactions: any;
   totalSpend: any = 0;
@@ -21,14 +19,6 @@ export class SpendsPage {
     public spendsService: SpendsService) {
     this.yearMonth = this.navParam.get("yearMonth");
     this.init();
-    this.navbar.backButtonClick = (e: UIEvent) => {
-      // Print this event to the console
-      console.log(e);
-      console.log("aloke");
-      // Navigate to another page
-      this.navCtrl.pop();
-    }
-
   }
 
   init(): any {

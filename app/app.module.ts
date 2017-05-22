@@ -39,6 +39,7 @@ import { KeysPipe } from '../providers/keys';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { LocalNotifications } from '@ionic-native/local-notifications';
+import { BackgroundMode } from '@ionic-native/background-mode';
 
 @NgModule({
   declarations: [
@@ -91,6 +92,7 @@ import { LocalNotifications } from '@ionic-native/local-notifications';
     StatusBar,
     SplashScreen,
     LocalNotifications,
+    BackgroundMode,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
