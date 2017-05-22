@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-navbar color="blue">
+    <ion-title>category-spend-chart</ion-title>
+  </ion-navbar>
+  <p style="float: left;font-size: 18px;margin-left: 6%;color: #0525cc;"><b>Spends</b></p>
+  <span style="float: right;margin-right: 20px;margin-top: 15px;font-size: 15px;color:red"><i class="fa fa-inr" aria-hidden="true"></i> <b>{{total}}</b></span>
+  <span style="float: right;margin-right: -38px; margin-top: 34px;font-size: 12px;color: #8c8b8b;"><b>{{yearMonth| amDateFormat: 'MMM-YY'}}</b></span>
+</ion-header>
+<ion-content>
+  <ion-card>
+      <ion-card-content>
+        <canvas #barCanvas></canvas>
+      </ion-card-content>
+    </ion-card>
+
+  <ion-item *ngFor="let item of spendCategoryForCurrentMonth">
+      <h2><b>{{item.Description}}</b></h2>
+      <h5>{{item.Date | amDateFormat: 'DD-MMM-YY'}}</h5>
+      <ion-badge item-right><i class="fa fa-inr" aria-hidden="true"></i> {{item.Amount| number : '1.2-2'}}</ion-badge>
+    </ion-item>
+</ion-content>

@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-navbar  color="blue">
+    <ion-title>Spend Category</ion-title>
+  </ion-navbar>
+  <p style="float: left;font-size: 18px;margin-left: 6%;color: #0525cc;"><b>Total Spends</b></p>
+    <span style="float: right;margin-right: 20px;margin-top: 15px;font-size: 15px;color:red"><i class="fa fa-inr" aria-hidden="true"></i> <b>{{totalSpendsValue}}</b></span>
+    <span style="float: right;margin-right: -38px; margin-top: 34px;font-size: 12px;color: #8c8b8b;"><b>{{yearMonth| amDateFormat: 'MMM-YY'}}</b></span>
+</ion-header>
+
+<ion-content>
+ <ion-list>        
+    <ion-item *ngFor="let item of topSpends; let i = index" style="border-top: 0.5px solid #d4d2d2;" (click)="gotoSpendsCategoryChart(item.CategoryId)">
+      <h2><b>{{item.CategoryName}}</b></h2>
+      <div class="top-spend-price">
+        <div class="child"><i class="fa fa-inr" aria-hidden="true"></i><b>{{item.Total | number : '1.2-2'}}</b></div>
+        <div class="child parcent">{{item.Parcent}}</div>
+      </div>
+      <div class="progress-bar">
+        <span [ngStyle]="{'width': item.Parcent,'background-color':item.backgroundcolor}"></span>
+      </div>
+    </ion-item>        
+  </ion-list> 
+</ion-content>

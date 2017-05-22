@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-navbar color="blue">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Ledger</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only color="royal" (click)="presentActionSheet()">
+        <ion-icon ios="ios-download" md="md-download"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+  <ion-card class="custom-ion-card">
+      <ion-card-content>
+        <canvas #barCanvas></canvas>
+      </ion-card-content>
+    </ion-card>
+</ion-header>
+
+
+<ion-content>
+    <ion-item *ngFor="let item of ledger">
+      <h2>{{item.YearMonth | amDateFormat: 'MMM-YY'}}</h2>
+      <ion-badge item-right><i class="fa fa-inr" aria-hidden="true"></i> {{item.Spend| number : '1.2-2'}}</ion-badge>
+    </ion-item>
+</ion-content>

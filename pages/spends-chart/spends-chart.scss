@@ -1,0 +1,33 @@
+spends-chart{
+    .progress-bar {
+        background-color: color($colors, white);
+        height: 10px;
+        width: 75%;
+        margin-right: 0%;
+        margin-top: 5px;
+        margin-bottom: 5px;
+        border-radius: 5px;
+        float: left;
+        span {
+            text-align: center;
+            display: inline-block;
+            height: 100%;
+            border-radius: 3px;
+            box-shadow: 0 1px 0 rgba(255, 255, 255, .5) inset;
+            transition: width .4s ease-in-out;    
+        }
+    }
+
+    .top-spend-price{
+        float: right;
+        margin-top: -19px;
+    }
+
+    .child{
+        text-align: right;
+    }
+    .parcent{
+        font-size: 12px;
+        color: #8c8b8b;
+    }
+}

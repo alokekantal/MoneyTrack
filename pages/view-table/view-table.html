@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button icon-only menuToggle>
+      <ion-icon name="menu"></ion-icon> 
+    </button>
+    <ion-title>viewTable</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+  <ion-list>
+    <ion-item>
+      <ion-label>Select Table</ion-label>
+      <ion-select [(ngModel)]="selectrdTable" (ngModelChange)="getTableData()">
+          <ion-option *ngFor="let key of tables" value="{{key.name}}">{{key.name}}</ion-option>        
+        </ion-select>
+    </ion-item>
+  </ion-list>
+  <div style="overflow: scroll">
+    <table>
+    <!-- Header -->
+      <tr>
+        <td *ngFor="let header of headers" style="padding: 2px">
+          <strong>{{header.key}}</strong>
+        </td>    
+      </tr>
+      
+      <!-- Body -->
+      <tr *ngFor="let rowData of tableData">
+        <td *ngFor="let key of rowData | keys" style="padding: 2px">
+          {{key.value}}
+        </td>
+      </tr>
+    </table>
+  </div>
+</ion-content>

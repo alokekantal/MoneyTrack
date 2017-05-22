@@ -1,0 +1,49 @@
+transaction {
+    .transaction-add{
+        float: right;
+        margin-right: 10%;
+        text-align: center;
+    }
+    .transaction-amount{
+        padding: 5px 5Px;
+        padding-top: 0px;
+        font-size: 27px;
+        width: 191px;
+        color: white;
+        margin-left: 28%;
+    }
+
+    .add-category{
+        background-color: transparent;
+        color: blue;
+        font-size: 10px !important;
+        box-shadow: 0 0px 0px 0 rgba(0, 0, 0, 0), 
+                    0 0px 0px 0px rgba(0, 0, 0, 0), 
+                    0 0px 0px 0 rgba(0, 0, 0, 0) !important;
+    }
+
+    .inr{
+        float: left;
+        margin-left: 20%;
+        font-size: 30px;
+        color: white;
+        margin-top: 16px;
+    }    
+
+    .transaction-amount input::-webkit-input-placeholder {
+        color: white !important;
+    }
+    
+    .transaction-amount input:-moz-placeholder { /* Firefox 18- */
+        color: white !important;  
+    }
+    
+    .transaction-amount input::-moz-placeholder {  /* Firefox 19+ */
+        color: white !important;  
+    }
+    
+    .transaction-amount input:-ms-input-placeholder {  
+        color: white !important;  
+    }
+
+}

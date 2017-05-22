@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-navbar  color="blue">
+    <ion-title>Transaction</ion-title>
+  </ion-navbar>
+    <p style="float: left;font-size: 18px;margin-left: 6%;color: #0525cc;"><b>Spends</b></p>
+    <span style="float: right;margin-right: 20px;margin-top: 15px;font-size: 15px;color:red"><i class="fa fa-inr" aria-hidden="true"></i> <b>{{this.totalSpend}}</b></span>
+    <span style="float: right;margin-right: -38px; margin-top: 34px;font-size: 12px;color: #8c8b8b;"><b>{{yearMonth| amDateFormat: 'MMM-YY'}}</b></span>
+</ion-header>
+
+<ion-content>
+  <ion-fab right bottom>
+    <button ion-fab color="secondary"><ion-icon name="add"></ion-icon></button>
+    <ion-fab-list side="top">
+      <button ion-fab clear (click)="doTransaction(2, 'Add Cash Spend')"><ion-icon ios="ios-remove" md="md-remove"></ion-icon></button>
+      <button ion-fab clear (click)="doTransaction(1, 'Add Cash Income')"><ion-icon ios="ios-add" md="md-add"></ion-icon></button>
+    </ion-fab-list>
+  </ion-fab>
+  
+  <ion-list>
+    <ion-item-sliding *ngFor="let item of Transactions; let i = index">
+    <ion-item (click)="doTransaction(2, 'Add Cash Spend', item)">
+      <h2><b>{{item.Description}}</b></h2>
+      <h3>{{item.CategoryName}}</h3>
+      <h5>{{item.Date | amDateFormat: 'DD-MMM-YY'}}</h5>
+      <ion-badge item-right><i class="fa fa-inr" aria-hidden="true"></i> {{item.Amount| number : '1.2-2'}}</ion-badge>
+    </ion-item>
+    <ion-item-options side="right">
+      <button ion-button color="danger" (click)="deleteSpend(item)">
+        <ion-icon ios="ios-trash" md="md-trash"></ion-icon>
+        Delete
+      </button>
+    </ion-item-options>
+  </ion-item-sliding>
+  </ion-list>
+</ion-content>
