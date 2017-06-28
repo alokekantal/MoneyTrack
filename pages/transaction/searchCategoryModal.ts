@@ -19,7 +19,7 @@ export class SearchCategoryModalPage {
     public alertCtrl: AlertController,
     public transactionService: TransactionService) {
     this.transactionType = this.params.get('transactionType');
-    this.transactionService.getCategory(this.transactionType).then((response) => {
+    this.transactionService.getCategory(this.transactionType).then((response) => {      
       this.categorys = response;
       this.searchCategory = response;
     });

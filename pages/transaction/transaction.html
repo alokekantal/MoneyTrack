@@ -19,7 +19,7 @@
         <ion-datetime displayFormat="DD-MMM-YY" [(ngModel)]="transaction.Date" (ngModelChange)="makeDirty()"></ion-datetime>
       </ion-item>
       <ion-item>
-        <ion-input type="text" [(ngModel)]="transaction.CategoryName" placeholder="Choose category" (focus)= "getCategory()"></ion-input>
+        <ion-input type="text" [(ngModel)]="transaction.CategoryName" [readonly]="true" placeholder="Choose category" (focus)= "getCategory()"></ion-input>
       </ion-item>
       <ion-item>      
         <ion-textarea rows="3" placeholder="{{transactionType == 1 ? 'How did you get this money?' : 'Where did you spend?'}}" [(ngModel)]="transaction.Description" (ngModelChange)="makeDirty()"></ion-textarea>

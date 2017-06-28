@@ -126,7 +126,11 @@ export class TransactionService {
 
         return new Promise<any>((resolve, reject) => {
             this.db.runMultyStatement(sqls, params).then((response) => {
-                resolve(response);
+                var sql = " SELECT CategoryID, CategoryName FROM Category WHERE CategoryName = ? AND CategoryType = ? ";
+                var param = [data.CategoryName, transactionType];
+                this.db.getRow(sql, param).then((response) => {
+                    resolve(response);
+                });
             });
         });
     }

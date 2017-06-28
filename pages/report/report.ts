@@ -103,11 +103,10 @@ export class ReportPage {
     loadBarChart() {
         var labels = [], data = [];
         this.ledger.forEach(item => {
-            labels.push(moment(item.Date).format('MMM-YY'));
+            labels.push(moment(item.YearMonth).format('MMM-YY'));
             data.push(item.Spend);
         });
         this.barChart = new Chart(this.barCanvas.nativeElement, {
-
             type: 'bar',
             data: {
                 labels: labels,

@@ -44,7 +44,7 @@ export class HomeService {
             " JOIN " +
             " Category C" +
             " ON E.CategoryId = C.CategoryId " +
-            " WHERE strftime('%m-%Y', E.Date) = strftime('%m-%Y', '" + date + "') ORDER BY E.Date LIMIT 3";
+            " WHERE strftime('%m-%Y', E.Date) = strftime('%m-%Y', '" + date + "') ORDER BY E.Date DESC LIMIT 3";
 
         return new Promise<any>((resolve, reject) => {
             this.db.getRows(sql, params).then((response) => {

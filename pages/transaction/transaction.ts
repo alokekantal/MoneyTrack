@@ -106,6 +106,8 @@ export class TransactionPage {
           text: 'Save',
           handler: data => {
             this.transactionService.saveCategory(data, this.transactionType).then((response) => {
+              this.transaction.CategoryId = response.CategoryId;
+              this.transaction.CategoryName = response.CategoryName;
               Toast.show("save successfully", "short", "center").subscribe(
                 toast => {
                   console.log(toast);
